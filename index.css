@@ -1,0 +1,11 @@
+#lifeStatusDisplay {
+	font-weight: bold;
+}
+
+.alive {
+	color: green;
+}
+
+.dead {
+	color: red;
+}

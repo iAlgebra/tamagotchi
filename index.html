@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tamagotchi Game</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div>
+		<h1>TAMAGOTCHI</h1>
+		<p>Your Tamagotchi pet starts off with 50 sleeping and eating points that decrease every second. Click on the START button to play! Good luck!</p>
+		<h3>Rules:</h3>
+		<ol>
+			<li>If the eating or sleeping points reach zero, your TAMAGOTCHI dies.</li>
+			<li>Click on "ZZZ" to add 10 sleeping points to your TAMAGOTCHI. Max sleeping is 50 pts.</li>
+			<li>Click on "Food" to feed your TAMAGOTCHI 10 points. If you feed your TAMAGOTCHI more than 50 points, it dies.</li>
+		</ol>
+		<hr/>
+		<button id="start">START</button>
+		<hr/>
+		<div>
+			<button id="sleepButton">ZZZ</button>
+			<button id="eatButton">Food</button>
+		</div>
+		<div>
+			<p>Sleeping points: <span id="sleepDisplay">50</span></p>
+			<p>Eating points: <span id="eatDisplay">50</span></p>
+			<p>Life Status: <span id="lifeStatusDisplay" class="alive">Alive</span></p>
+		</div>
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
