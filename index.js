@@ -23,6 +23,7 @@ var $sleepDisplay = document.querySelector("#sleepDisplay");
 var $eatDisplay = document.querySelector("#eatDisplay");
 var $lifeStatusDisplay = document.querySelector("#lifeStatusDisplay");
 var $startButton = document.querySelector("#start");
+var $petDisplay = document.querySelector("#petDisplay");
 
 // $startButton.addEventListener("click", myFunction);
 // myFunction should execute setInterval() but how can I use numToStop outside of it? 
@@ -67,4 +68,12 @@ $eatButton.addEventListener("click", function() {
 			alive = false;
 		}
 	}
+});
+
+$petDisplay.addEventListener("mouseover", function() {
+	this.setAttribute("src", "img/smiling-dog.jpeg")
+});
+
+$petDisplay.addEventListener("mouseout", function() {
+	this.setAttribute("src", "img/sleeping-dog.jpeg")
 });
