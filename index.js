@@ -31,18 +31,14 @@ var $sleepDisplay = document.querySelector("#sleepDisplay");
 var $eatDisplay = document.querySelector("#eatDisplay");
 var $ageDisplay = document.querySelector("#ageDisplay");
 var $lifeStatusDisplay = document.querySelector("#lifeStatusDisplay");
-var $startButton = document.querySelector("#start");
 var $petDisplay = document.querySelector("#petDisplay");
-
-// $startButton.addEventListener("click", myFunction);
-// myFunction should execute setInterval() but how can I use numToStop outside of it? 
 
 function die() {
 	clearInterval(numToStop);
 	$lifeStatusDisplay.textContent = "Dead";
 	$lifeStatusDisplay.classList.remove("alive");
 	$lifeStatusDisplay.classList.add("dead");
-	$petDisplay.setAttribute("src", "img/coffin.jpeg");
+	$petDisplay.setAttribute("src", "img/coffin.jpg");
 	alive = false;
 }
 
@@ -76,16 +72,28 @@ $eatButton.addEventListener("click", function() {
 	} else {
 		eatingPoints += 10;
 		eatDisplay.textContent = eatingPoints;
+		
 		if(eatingPoints > MAX_EATING_POINTS) {
 			die();
+		} else {
+			$petDisplay.setAttribute("src", "img/eating-dog.jpg");
+			setTimeout(function(){
+				if(alive) {
+					$petDisplay.setAttribute("src", "img/sleeping-dog.jpg");
+				}
+			}, 1000);
 		}
 	}
 });
 
 $petDisplay.addEventListener("mouseover", function() {
-	this.setAttribute("src", "img/smiling-dog.jpeg");
+	if(alive) {
+		this.setAttribute("src", "img/smiling-dog.jpg");
+	}
 });
 
 $petDisplay.addEventListener("mouseout", function() {
-	this.setAttribute("src", "img/sleeping-dog.jpeg");
+	if (alive) {
+		this.setAttribute("src", "img/sleeping-dog.jpg");
+	}
 });
